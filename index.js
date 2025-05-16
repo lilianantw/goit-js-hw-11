@@ -4,10 +4,10 @@ import{a as f,S as d,i as a}from"./assets/vendor-Bz4lgVUE.js";(function(){const 
         <img src="${i}" alt="${t}" loading="lazy" />
       </a>
       <div class="info">
-        <p class="info-item"><b>Likes</b>${n}</p>
-        <p class="info-item"><b>Views</b>${e}</p>
-        <p class="info-item"><b>Comments</b>${r}</p>
-        <p class="info-item"><b>Downloads</b>${s}</p>
+        <p class="info-item"><b>Likes:</b> ${n}</p>
+        <p class="info-item"><b>Views:</b> ${e}</p>
+        <p class="info-item"><b>Comments:</b> ${r}</p>
+        <p class="info-item"><b>Downloads:</b> ${s}</p>
       </div>
     </li>
   `}function b(){l?l.refresh():l=new d(".gallery a",{captionsData:"alt",captionDelay:250})}const L=document.querySelector(".form"),u=document.querySelector(".gallery"),c=document.querySelector(".loader");window.addEventListener("load",()=>{c.style.display="none"});L.addEventListener("submit",i=>{i.preventDefault();const o=i.target.elements["search-text"],t=o.value.trim();if(!t){a.warning({title:"Попередження",message:"Введіть пошуковий запит!",position:"topRight"});return}u.innerHTML="",c.style.display="block",setTimeout(()=>{g(t).then(n=>{if(n.length===0){a.error({title:"Error",message:"No images found",position:"topRight"});return}y(n,u)}).catch(n=>{a.error({title:"Error",message:"Failed to fetch images",position:"topRight"})}).finally(()=>{o.value="",c.style.display="none"})},700)});
